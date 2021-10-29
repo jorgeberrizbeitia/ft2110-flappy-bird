@@ -4,7 +4,7 @@ class Game {
     this.bg = new Image();
     this.bg.src = "./images/bg.png";
     this.bird = new Bird();
-    this.pipeArr = [ new Pipe("./images/obstacle_top.png", 0) ];
+    this.pipeArr = [ new Pipe("./images/obstacle_top.png", -100) ];
     this.gapBetweenPipes = 100;
     this.pipeAppearingDistance = 400;
   }
@@ -22,7 +22,7 @@ class Game {
       // how to we add a new pipe
 
       // get a random random number to assign to yPos
-      let randomPosYTop = Math.random() * - canvas.height / 2 // 0 - 1
+      let randomPosYTop = Math.random() * - canvas.height / 3 // 0 - 1
       // Math.random * range
 
       let pipeTop = new Pipe( "./images/obstacle_top.png", randomPosYTop )
@@ -49,6 +49,9 @@ class Game {
       eachPipe.pipeMove();
     })
     this.spawnPipes();
+    this.pipeArr.forEach( (eachPipe) => {
+      this.bird.birdPipeCollision( eachPipe );
+    } )
 
     // * 3. DRAWING THE ELEMENTS
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);

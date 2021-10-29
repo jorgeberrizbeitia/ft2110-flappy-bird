@@ -4,8 +4,8 @@ class Pipe {
   constructor( srcImage, yPos ) {
     this.image = new Image();
     this.image.src = srcImage; // dynamic
-    this.width = 100;
-    this.height = canvas.height / 2;
+    this.width = 70;
+    this.height = canvas.height * 0.75;
     this.x = canvas.width;
     this.y = yPos; // dynamic
   }
