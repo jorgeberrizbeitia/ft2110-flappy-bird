@@ -26,9 +26,19 @@ const startGame = () => {
   game.gameLoop()
 }
 
+const restartGame = () => {
+  gameoverScreen.style.display = "none";
+  canvas.style.display = "flex";
+  // you will need to create a new instance of the game
+  // game = new Game();
+  // you might need to restart some default variables
+  game.gameLoop();
+}
+
 
 // * ADD EVENT LISTENERS
 startBtn.addEventListener("click", startGame)
+restartBtn.addEventListener("click", restartGame)
 
 canvas.addEventListener( "click", () => {
   game.bird.birdJump(); // here I wanna make the bird jump!

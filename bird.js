@@ -36,10 +36,13 @@ class Bird {
       this.x + this.width > singlePipe.x &&
       this.y < singlePipe.y + singlePipe.height &&
       this.height + this.y > singlePipe.y) {
-        console.log("collision happening!")
+        // console.log("collision happening!")
+        return true
         // cause the game to end
         // create boolean for the game to end, and trigger. Also check on requestAnimationFrame
 
+      } else {
+        return false
       }
 
 
