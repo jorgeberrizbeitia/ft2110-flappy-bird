@@ -18,3 +18,12 @@
 }
 
 /* hide canvas & gameover screen elements at the start */
+
+
+#my-canvas {
+  display: none;
+}
+
+#gameover-screen {
+  display: none;
+}
